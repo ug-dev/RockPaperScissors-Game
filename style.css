@@ -1,177 +1,339 @@
-* {
-    font-family: 'Josefin Sans', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
 }
 
 body {
-    background: #24272E;
+    line-height:1;
 }
 
-h1 {
-    font-size: 40px;
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+    display:block;
 }
 
-header {
-    background: white;
-    padding: 20px;
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/*My Code*/
+* {
+    font-family: 'Raleway', sans-serif;
+    outline: none;
+}
+
+body {
+    background: #000;
+}
+
+/*Heading*/
+.heading {
+    padding: 15px 0;
     text-align: center;
 }
 
-.score-board {
-    margin: 30px auto; 
-    border: 3px solid #fff;
-    border-radius: 5px;
+.player1-mode {
     text-align: center;
-    width: 250px;
+}
+
+.player2-mode {
+    text-align: center;
+}
+
+.player1-mode span {
     color: #fff;
-    font-size: 46px;
-    padding: 15px 20px;
-    position: relative;
+    font-weight: 900;
 }
 
-.label {
-    background: #E2584d;
+.player2-mode span {
     color: #fff;
-    font-size: 14px;
-    padding: 2px 10px;
+    font-weight: 900;
 }
-
-#player-label {
-    position: absolute;
-    padding: 10px;
-    font-size: 17px;
-    border-radius: 5px;
-    top: 20px;
-    left: -35px;
-}
-
-#cpu-label {
-    position: absolute;
-    padding: 10px;
-    font-size: 17px;
-    border-radius: 5px;
-    top: 20px;
-    right: -30px;
-}
-
-.inputs {
-    text-align: center;
-}
-
-.input{
-    cursor: pointer;
-    display: inline-block;
-    border-radius: 50%;
-    background: #222;
-    border: 5px solid #fff;
-    padding: 10px;
-    margin: 25px 15px; 
-    transition: 0.3s ease;
-}
-
-@media only screen and (max-width: 416px){
-    .input {
-        margin: 15px 4px;
-        padding: 5px;
-    }
-
-    img {
-        height: 30px;
-        width: 30px;
-    }
-}
-
 img {
-    height: 75px;
-    width: 75px;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
 }
 
-.action-message-back {
-    display: flex;
+.heading h1 {
+    color: #fff;
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+/*Game-Board*/
+.game-container {
+    border: 2px solid #fff;
+    margin: 15px;
+    margin-top: 25px;
+    padding: 30px;
+}
+
+.game-container table {
+    margin: 0 auto;
+    height: 80%;
+    width: 90%;
+}
+
+td {
     cursor: pointer;
-    align-self: center;
-    justify-content: center;
-    align-items: center;
-    background: #cccccc;
-    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 70px;
     height: 100px;
     width: 100px;
-    margin: 5px auto;
-}
-
-.action-message-back #action-message {
-    text-align: center;
-    font-size: 20px;
-}
-
-.virtual {
-    width: 100%;
-    text-align: center;
-    opacity: 0;
-}
-
-#cpurock {
-    background: #111;
-}
-
-#cpupaper {
-    background: #111;
-}
-
-#cpuscissors {
-    background: #111;
-}
-
-/*New Variations*/
-
-.main-block {
-    width: 400px;
-    height: 200px;
-    background: #f3f3f3;
-    margin: 50px auto;
-    border-radius: 5px;
-}
-
-.main-block h2 {
-    text-align: center;
-    font-family: 20px;
-    padding: 15px 0;
-}
-
-.main-block ul {
-    text-align: center;
-    padding: 15px 0;
-    list-style: none;
-}
-
-.main-block ul li {
-    cursor: pointer;
-    background: #ff9900;
-    width: 150px;
-    margin: 0 auto;
-    border-radius: 3px;
-    padding: 15px 0;
-    margin-bottom: 15px;
-}
-
-.main-block ul li a {
-    text-decoration: none;
+    font-weight: 900;
     color: #fff;
-    font-size: 18px;
+    border-color: #fff;
+    border-width: 5px;
 }
 
-.main-block ul li:hover {
-    box-shadow: 0 10px 14px 0 rgba(0,0,0,0.24), 0 14px 40px 0 rgba(0,0,0,0.19);
+.ugAnimate {
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    animation-name: appear;
 }
 
-@media only screen and (max-width: 415px){
-    .main-block {
-        width: 300px;
+.blink {
+    animation-duration: 0.4s;
+    animation-iteration-count: 2;
+    animation-name: ugblink;
+}
+
+@keyframes ugblink {
+    from {font-size: 0px;}
+  to {font-size: 70px;}
+}
+
+@keyframes appear {
+    from {font-size: 100px;}
+  to {font-size: 70px;}
+}
+
+.top {
+    border-bottom-style: solid;
+}
+
+.top.left {
+    border-right-style: solid;
+}
+
+.top.right {
+    border-left-style: solid;
+}
+
+.left {
+    border-right-style: solid;
+}
+
+.right {
+    border-left-style: solid;
+}
+
+.bottom {
+    border-top-style: solid;
+}
+
+.bottom.left {
+    border-right-style: solid;
+}
+
+.bottom.right {
+    border-left-style: solid;
+}
+
+@media screen and (min-width: 500px){
+    .game-container table {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 800px){
+    .game-container table {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 800px){
+    td {
+        font-size: 40px;
     }
 
-    h1 {
-        font-size: 30px;
+    @keyframes appear {
+        from {font-size: 70px;}
+      to {font-size: 40px;}
     }
+
+    @keyframes ugblink {
+        from {font-size: 0px;}
+      to {font-size: 40px;}
+    }
+}
+
+/*Score-Board*/
+.score-board {
+    height: 40px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.score-board .score {
+    color: #fff;
+	display: inline;
+	font-size: 25px;
+}
+
+.score-board .left {
+	float: left;
+}
+
+.score-board .right {
+	float: right;
+} 
+
+#player_1_name {
+    border-bottom-color: #fff;
+    border-bottom-width: 2px; 
+}
+
+#player_2_name {
+    border-bottom-color: #fff;
+    border-bottom-width: 2px; 
+}
+
+.resetButton {
+    text-align: center;
+    padding: 20px; 
+}
+
+.resetButton #btn {
+	cursor: pointer;
+	border: none;
+	background: #fff;
+	color: #111;
+	border-radius: 20px;
+	text-align: center;
+	height: 50px;
+	width: 150px;
+	font-size: 20px;
+}
+
+.resetButton #btn:active {
+	height: 45px;
+	width: 140px;
+	font-size: 18px;
+}
+
+@media screen and (min-width: 500px){
+    .score-board {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .score-board .score {
+        font-size: 20px;
+    }
+
+    .game-container {
+        padding: 10px;
+    }
+
+    td {
+        height: 70px;
+        width: 40px;
+    }
+
+    @keyframes appear {
+        from {font-size: 10px;}
+      to {font-size: 40px;}
+    }
+}
+
+@media screen and (min-width: 800px){
+    .score-board {
+        width: 400px;
+    }
+}
+
+.animate-input {
+    opacity: 0;
 }
